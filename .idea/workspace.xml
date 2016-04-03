@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1c15e0e-0eff-42a0-a7e1-4a1d67089b6e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Entity/MapObject.class" afterPath="$PROJECT_DIR$/target/classes/Entity/MapObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/GameState/Level1State.class" afterPath="$PROJECT_DIR$/target/classes/GameState/Level1State.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main/GamePanel.class" afterPath="$PROJECT_DIR$/target/classes/Main/GamePanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TileMap/TileMap.class" afterPath="$PROJECT_DIR$/target/classes/TileMap/TileMap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Entity/MapObject.java" afterPath="$PROJECT_DIR$/src/main/java/Entity/MapObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/GameState/Level1State.java" afterPath="$PROJECT_DIR$/src/main/java/GameState/Level1State.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/GamePanel.java" afterPath="$PROJECT_DIR$/src/main/java/Main/GamePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/TileMap/TileMap.java" afterPath="$PROJECT_DIR$/src/main/java/TileMap/TileMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Entity/Player.java" afterPath="$PROJECT_DIR$/src/main/java/Entity/Player.java" />
     </list>
     <ignored path="GameTest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,8 +74,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65482235">
-              <caret line="302" column="60" selection-start-line="302" selection-start-column="60" selection-end-line="302" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.9103215">
+              <caret line="306" column="141" selection-start-line="306" selection-start-column="141" selection-end-line="306" selection-end-column="141" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3658#3659#0" expanded="true" />
@@ -1060,8 +1052,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65482235">
-          <caret line="302" column="60" selection-start-line="302" selection-start-column="60" selection-end-line="302" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.9103215">
+          <caret line="306" column="141" selection-start-line="306" selection-start-column="141" selection-end-line="306" selection-end-column="141" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3658#3659#0" expanded="true" />

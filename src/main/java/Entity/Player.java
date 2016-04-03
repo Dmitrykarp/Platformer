@@ -301,7 +301,16 @@ public class Player extends MapObject {
         }
         else {
             //TODO need fix for jump, fall, glid and 2xCombo
-            g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -width, height, null);
+           if(!falling && !jumping){
+                g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -width, height, null);
+           }
+           else if(jumping && gliding){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -36, height, null);}
+           else if(gliding){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -48, 28, null);}
+           else if(falling){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -38, height, null); }
+
+           //else if(jumping){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -15, height, null);}
+
+
         }
 
 
