@@ -26,7 +26,7 @@ public class Player extends MapObject {
     private boolean firing;
     private int fireCost;
     private int fireBallDamage;
-    //private ArrayList<FireBall> fireBalls;
+    private ArrayList<FireBall> fireBalls;
 
     // scratch
     private boolean scratching;
@@ -40,7 +40,7 @@ public class Player extends MapObject {
     private ArrayList<BufferedImage[]> sprites;
     private final int[] numFrames = {
             //IDLE, WALK,JUMP, FALL, GLIPPING, FIREBAL, SCRACH
-            1, 4, 1, 1, 4, 1, 5
+            1, 4, 1, 1, 4, 3, 5
 
     };
 
@@ -75,7 +75,7 @@ public class Player extends MapObject {
         fire = maxFire = 2500;
         fireCost = 200;
         fireBallDamage = 5;
-        //fireBalls = new ArrayList<FireBall>();
+        fireBalls = new ArrayList<FireBall>();
 
         scratchDamage = 8;
         scratchRange = 40;
@@ -108,7 +108,7 @@ public class Player extends MapObject {
                         bi[j] = spritesheet.getSubimage(j*48, 128, 48, 28);
                     }
                     if(i == 5){
-                        bi[j] = spritesheet.getSubimage(0, 156, 52, 36);
+                        bi[j] = spritesheet.getSubimage(j*52, 156, 52, 36);
                     }
                     if(i == 6) {
                         bi[j] = spritesheet.getSubimage(j*63, 192, 63, 32);
@@ -219,6 +219,27 @@ public class Player extends MapObject {
             if(animation.hasPlayedOnce()) firing = false;
         }
 
+        //fireball attack
+        fire +=1;
+        if(fire > maxFire) fire = maxFire;
+        if(firing && currentAction != FIREBALL){
+            if(fire > fireCost){
+
+                fire -=fireCost;
+                FireBall fb = new FireBall(tileMap, facingRight);
+                fb.setPosition(x,y);
+                fireBalls.add(fb);
+            }
+        }
+        // update fireball
+        for (int i =0; i < fireBalls.size(); i++){
+            fireBalls.get(i).update();
+            if(fireBalls.get(i).shouldRemove()){
+                fireBalls.remove(i);
+                i--;
+            }
+        }
+
         // set animation
         if(scratching){
             if(currentAction != SCRATCHING){
@@ -293,6 +314,11 @@ public class Player extends MapObject {
     public void draw(Graphics2D g){
 
         setMapPosition();
+
+        //draw fireball
+        for(int i =0; i <fireBalls.size(); i++){
+            fireBalls.get(i).draw(g);
+        }
 
         // draw player
         if(flinching){

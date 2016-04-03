@@ -197,6 +197,11 @@ public abstract class MapObject {
         ymap = tileMap.gety();
     }
 
+    public void setMapPosition(int x){
+        xmap = tileMap.getx()+ x;
+        ymap = tileMap.gety();
+    }
+
     public void setLeft(boolean b){ left = b;}
     public void setRight(boolean b){ right = b;}
     public void setUp(boolean b){ up = b;}
