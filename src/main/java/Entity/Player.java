@@ -39,7 +39,6 @@ public class Player extends MapObject {
     // animations
     private ArrayList<BufferedImage[]> sprites;
     private final int[] numFrames = {
-      //TODO Здесь вставить колличество фреймов на тайле игрока по порядку: IDLE, WALK... итого 7 тайлов
             //IDLE, WALK,JUMP, FALL, GLIPPING, FIREBAL, SCRACH
             1, 4, 1, 1, 4, 1, 5
 
@@ -92,7 +91,6 @@ public class Player extends MapObject {
 
             sprites = new ArrayList<BufferedImage[]>();
 
-            //TODO колличество спрайтов в столбце листа спрайтов = 7
             for(int i = 0; i< 7; i++) {
                 BufferedImage[] bi = new BufferedImage[numFrames[i]];
                 for (int j = 0; j < numFrames[i]; j++) {
@@ -308,13 +306,14 @@ public class Player extends MapObject {
 
         }
         else {
-            //TODO need fix for jump, fall, glid and 2xCombo
-           if(!falling && !jumping){
-                g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -width, height, null);
-           }
+           if(!falling && !jumping && firing){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -52, height, null);}
+           else if(!falling && !jumping){ g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -width, height, null);}
            else if(jumping && gliding){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -36, height, null);}
+           else if((jumping && firing) || (falling && firing)){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -52, height, null);}
+           else if((jumping && scratching) || (falling && scratching)){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -63, height, null);}
            else if(gliding){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -48, 28, null);}
            else if(falling){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -38, height, null); }
+           else if(scratching){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -63, height, null); }
         }
 
 
