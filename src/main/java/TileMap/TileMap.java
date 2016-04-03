@@ -106,6 +106,8 @@ public class TileMap {
     public int getTileSize() {return tileSize;}
     public int getx() {return (int) x;}
     public int gety() {return (int) y;}
+    public int getNumRows() { return numRows; }
+    public int getNumCols() { return numCols; }
 
     public int getWidth() {
         return width;
@@ -115,7 +117,7 @@ public class TileMap {
         return height;
     }
 
-    public int getTipe(int row, int col){
+    public int getType(int row, int col){
 
         int rc = map[row][col];
         int r = rc / numTilesAcross;
