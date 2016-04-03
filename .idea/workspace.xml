@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1c15e0e-0eff-42a0-a7e1-4a1d67089b6e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/GameState/GameStateManager.class" afterPath="$PROJECT_DIR$/target/classes/GameState/GameStateManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/GameState/GameStateManager.java" afterPath="$PROJECT_DIR$/src/main/java/GameState/GameStateManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Resources/Backgrounds/menubg2.gif" afterPath="$PROJECT_DIR$/src/main/Resources/Backgrounds/menubg2.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Entity/FireBall.java" afterPath="$PROJECT_DIR$/src/main/java/Entity/FireBall.java" />
     </list>
     <ignored path="GameTest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuStateTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuStateTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/GameState/MenuStateTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7766498">
-              <caret line="77" column="44" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -117,11 +116,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FireBall.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FireBall.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Entity/FireBall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="35" selection-start-line="51" selection-start-column="12" selection-end-line="53" selection-end-column="35" />
+            <state vertical-scroll-proportion="2.1505923">
+              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -172,11 +171,11 @@
         <option value="$PROJECT_DIR$/src/main/java/TileMap/Background.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/Entity/MapObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Entity/FireBall.java" />
         <option value="$PROJECT_DIR$/src/main/java/GameState/GameStateManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/Entity/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/Entity/PlayerInMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/GameState/MenuStateTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Entity/FireBall.java" />
       </list>
     </option>
   </component>
@@ -1077,16 +1076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/FireBall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="35" selection-start-line="51" selection-start-column="12" selection-end-line="53" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Entity/PlayerInMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1107,9 +1096,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GameState/MenuStateTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7766498">
-          <caret line="77" column="44" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/FireBall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.1505923">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
