@@ -3,7 +3,7 @@ package Entity;
 import Main.GamePanel;
 import TileMap.TileMap;
 import TileMap.Tile;
-import javafx.animation.Animation;
+import Entity.Animation;
 import java.awt.Rectangle;
 
 /**
@@ -154,11 +154,14 @@ public abstract class MapObject {
 
 
         }
-        if(dx >0){
+        if(dx > 0){
             if(topRight || bottomRight){
                 dx = 0;
                 xtemp = (currCol +1) *tileSize - cwidth / 2;
 
+            }
+            else{
+                xtemp += dx;
             }
         }
 
@@ -202,10 +205,10 @@ public abstract class MapObject {
     public void setJumping (boolean b){ jumping = b;}
 
     public boolean notOnScreen(){
-        return x + xmap +width < 0
+        return     x + xmap + width < 0
                 || x + xmap - width > GamePanel.WIDTH
-                || y + xmap + height < 0
-                || y - ymap - height > GamePanel.HEIGHT;
+                || y + ymap + height < 0
+                || y + ymap - height > GamePanel.HEIGHT;
     }
 
 
