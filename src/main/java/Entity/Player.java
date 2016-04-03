@@ -41,7 +41,7 @@ public class Player extends MapObject {
     private final int[] numFrames = {
       //TODO Здесь вставить колличество фреймов на тайле игрока по порядку: IDLE, WALK... итого 7 тайлов
             //IDLE, WALK,JUMP, FALL, GLIPPING, FIREBAL, SCRACH
-            1, 4, 1, 1, 4, 1, 1
+            1, 4, 1, 1, 4, 1, 5
 
     };
 
@@ -113,7 +113,7 @@ public class Player extends MapObject {
                         bi[j] = spritesheet.getSubimage(0, 156, 52, 36);
                     }
                     if(i == 6) {
-                        bi[j] = spritesheet.getSubimage(0, 192, 51, 32);
+                        bi[j] = spritesheet.getSubimage(j*63, 192, 63, 32);
                     }
 
                 }
@@ -213,6 +213,14 @@ public class Player extends MapObject {
         checkTileMapCollision();
         setPosition(xtemp, ytemp);
 
+        //check attack has stop
+        if(currentAction == SCRATCHING){
+            if(animation.hasPlayedOnce()) scratching = false;
+        }
+        if (currentAction == FIREBALL){
+            if(animation.hasPlayedOnce()) firing = false;
+        }
+
         // set animation
         if(scratching){
             if(currentAction != SCRATCHING){
@@ -307,10 +315,6 @@ public class Player extends MapObject {
            else if(jumping && gliding){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -36, height, null);}
            else if(gliding){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -48, 28, null);}
            else if(falling){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -38, height, null); }
-
-           //else if(jumping){g.drawImage(animation.getImage(),(int)(x +xmap - width / 2 + width), (int)(y + ymap - height / 2), -15, height, null);}
-
-
         }
 
 

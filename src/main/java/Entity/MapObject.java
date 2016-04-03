@@ -3,7 +3,6 @@ package Entity;
 import Main.GamePanel;
 import TileMap.TileMap;
 import TileMap.Tile;
-import Entity.Animation;
 import java.awt.Rectangle;
 
 /**
