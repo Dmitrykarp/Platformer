@@ -12,6 +12,7 @@ public class GameStateManager {
     private int currentState;
 
     public static final int MENUSTATE = 0;
+    public static final int MENUSTATE1 = 2;
     public static final int LEVEL1STATE = 1;
 
 
@@ -20,8 +21,9 @@ public class GameStateManager {
         gameStates = new ArrayList<GameState>();
 
         currentState = 0;
-        gameStates.add(new MenuState(this));
+        gameStates.add(new MenuStateTest(this));
         gameStates.add(new Level1State(this));
+
 
 
     }
