@@ -13,6 +13,8 @@ import java.awt.event.KeyEvent;
 public class MenuStateTest extends GameState {
 
     private Background bg;
+    private Background skyBg;
+    private Background treeAple;
     private PlayerInMenu player = new PlayerInMenu(new TileMap(32));
 
     private int currentChoise = 0;
@@ -34,7 +36,12 @@ public class MenuStateTest extends GameState {
         try {
 
             bg = new Background("/Backgrounds/menubg2.gif", 0);
+            skyBg = new Background("/Backgrounds/sky.gif",1);
+            treeAple = new Background("/Backgrounds/Tree.gif",1);
             bg.setVector(0,0);
+            treeAple.setVector(0,0);
+            treeAple.setPosition(-70,-17);
+            skyBg.setVector(-0.5,0);
 
             titleColor = new Color(128,0,0);
             titleFont = new Font("Century Gothic", Font.PLAIN, 28);
@@ -52,19 +59,22 @@ public class MenuStateTest extends GameState {
 
     public void init(){}
     public void update(){
-
+        skyBg.update();
         bg.update();
+        treeAple.update();
         player.update();
     }
     public void draw(Graphics2D g){
         // draw bg
+        skyBg.draw(g);
         bg.draw(g);
+        treeAple.draw(g);
         player.draw(g);
 
         //draw title
         g.setColor(titleColor);
         g.setFont(titleFont);
-        g.drawString("Вилы судьбы",120,30);
+        g.drawString("Вилы судьбы",100,30);
 
         //draw menu options
         g.setFont(font);
@@ -75,7 +85,7 @@ public class MenuStateTest extends GameState {
             else {
                 g.setColor(Color.BLACK);
             }
-            g.drawString(options[i], 245, 70 + i * 15);
+            g.drawString(options[i], 180, 90 + i * 15);
 
         }
 
