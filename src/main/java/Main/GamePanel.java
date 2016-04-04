@@ -13,7 +13,7 @@ import java.awt.image.BufferedImage;
  */
 public class GamePanel extends JPanel implements Runnable, KeyListener {
 
-    //dimesions
+    //dimesion
     public static final int WIDTH = 320;
     public static final int HEIGHT = 240;
     public static final int SCALE = 2;
