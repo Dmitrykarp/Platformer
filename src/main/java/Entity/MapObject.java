@@ -3,7 +3,8 @@ package Entity;
 import Main.GamePanel;
 import TileMap.TileMap;
 import TileMap.Tile;
-import java.awt.Rectangle;
+
+import java.awt.*;
 
 /**
  * Created by Support on 03.04.2016.
@@ -213,6 +214,15 @@ public abstract class MapObject {
                 || x + xmap - width > GamePanel.WIDTH
                 || y + ymap + height < 0
                 || y + ymap - height > GamePanel.HEIGHT;
+    }
+
+    public void draw(Graphics2D g){
+        if (facingRight){
+            g.drawImage(animation.getImage(),(int)(x + xmap - width / 2), (int) (y + ymap - height / 2), null);
+        }
+        else {
+            g.drawImage(animation.getImage(),(int)(x + xmap - width / 2 + width), (int) (y + ymap - height / 2), -width, height, null);
+        }
     }
 
 
