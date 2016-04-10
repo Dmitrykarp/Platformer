@@ -35,6 +35,10 @@ public class Background {
         }
 
     }
+    public Background(BufferedImage image){
+        this.image = image;
+        this.moveScale = 1;
+    }
 
     public void setPosition(double x, double y){
         this.x = (x * moveScale) % GamePanel.WIDTH;

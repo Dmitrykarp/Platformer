@@ -4,8 +4,8 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
+import Audio.AudioPlayer;
 import Entity.Enemies.Baran;
-import Entity.Enemies.Slugger;
 import Entity.Enemy;
 import Entity.Explosion;
 import Entity.HUD;
@@ -20,13 +20,11 @@ public class Level1State extends GameState {
 
     private TileMap tileMap;
     private Background bg;
-
     private Player player;
-
     private ArrayList<Enemy> enemies;
     private ArrayList<Explosion> explosions;
-
     private HUD hud;
+    private AudioPlayer bgMusic;
 
     public Level1State(GameStateManager gsm){
         this.gsm = gsm;
@@ -50,6 +48,11 @@ public class Level1State extends GameState {
         explosions = new ArrayList<Explosion>();
 
         hud = new HUD(player);
+
+        bgMusic = new AudioPlayer("/Music/level1-1.mp3");
+        bgMusic.play();
+        bgMusic.setLoop();
+
     }
 
     private void populateEnemies(){
@@ -63,6 +66,7 @@ public class Level1State extends GameState {
                 new Point(1680,190),
                 new Point(1800,190),
         };
+
         for (int i = 0; i<points.length; i++){
          b = new Baran(tileMap);
             b.setPosition(points[i].x, points[i].y);
@@ -101,8 +105,8 @@ public class Level1State extends GameState {
                 i++;
             }
         }
-
     }
+
     public void draw(Graphics2D g){
 
         //draw background
@@ -127,11 +131,9 @@ public class Level1State extends GameState {
 
         //draw HUD
         hud.draw(g);
-
-
     }
-    public void keyPresed(int k){
 
+    public void keyPresed(int k){
         if (k == KeyEvent.VK_LEFT || k == KeyEvent.VK_A){ player.setLeft(true); }
         if (k == KeyEvent.VK_RIGHT || k == KeyEvent.VK_D){ player.setRight(true); }
         if (k == KeyEvent.VK_DOWN || k == KeyEvent.VK_S){ player.setDown(true); }
@@ -140,18 +142,14 @@ public class Level1State extends GameState {
         if (k == KeyEvent.VK_J) player.setGliding(true);
         if (k == KeyEvent.VK_L) player.setScratching();
         if (k == KeyEvent.VK_K) player.setFiring();
-
-
     }
-    public void keyReleased(int k){
 
+    public void keyReleased(int k){
         if (k == KeyEvent.VK_LEFT || k == KeyEvent.VK_A){ player.setLeft(false); }
         if (k == KeyEvent.VK_RIGHT || k == KeyEvent.VK_D){ player.setRight(false); }
         if (k == KeyEvent.VK_DOWN || k == KeyEvent.VK_S){ player.setDown(false); }
         if (k == KeyEvent.VK_UP || k == KeyEvent.VK_W){ player.setUp(false); }
         if (k == KeyEvent.VK_SPACE) player.setJumping(false);
         if (k == KeyEvent.VK_J) player.setGliding(false);
-
     }
-
 }
