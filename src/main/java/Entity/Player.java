@@ -179,7 +179,22 @@ public class Player extends MapObject {
                 }
 
             }
+
+            // check enemies collisions
+            if(intersects(e)){
+                hit(e.getDamage());
+            }
+
         }
+    }
+
+    public void hit( int damage){
+        if (flinching) return;
+        health -=damage;
+        if(health < 0) health = 0;
+        if (health == 0) dead = true;
+        flinching = true;
+        flinchTimer = System.nanoTime();
     }
 
     private void getNextPosition(){
@@ -269,6 +284,13 @@ public class Player extends MapObject {
                 fireBalls.remove(i);
                 i--;
             }
+        }
+
+        // update flinch after attack
+        if (flinching){
+            long elapsed = (System.nanoTime() - flinchTimer) / 1000000;
+            if (elapsed > 1000)
+                flinching = false;
         }
 
         // set animation
