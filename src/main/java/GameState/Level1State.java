@@ -44,22 +44,14 @@ public class Level1State extends GameState {
         player.setPosition(100, 100);
 
         enemies = new ArrayList<Enemy>();
-        Slugger s = new Slugger(tileMap);
-        s.setPosition(100, 100);
         Baran b = new Baran(tileMap);
         b.setPosition(300, 100);
 
-        enemies.add(s);
         enemies.add(b);
 
         hud = new HUD(player);
     }
     public void update(){
-
-        //update all enemies
-        for (int i = 0; i < enemies.size(); i ++){
-            enemies.get(i).update();
-        }
 
         // update player
         player.update();
@@ -68,7 +60,17 @@ public class Level1State extends GameState {
         //set background
         bg.setPosition(tileMap.getx(), tileMap.gety());
 
+        // attack enemies
+        player.checkAttack(enemies);
 
+        //update all enemies
+                for (int i = 0; i < enemies.size(); i ++){
+                    enemies.get(i).update();
+                    if(enemies.get(i).isDead()){
+                        enemies.remove(i);
+                        i--;
+                    }
+                }
 
     }
     public void draw(Graphics2D g){

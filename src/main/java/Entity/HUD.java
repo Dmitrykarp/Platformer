@@ -28,11 +28,11 @@ public class HUD {
     }
 
     public void draw(Graphics2D g){
-        g.drawImage(image, 0, 10, null);
+        g.drawImage(image, 0, 2, null);
         g.setFont(font);
         g.setColor(Color.WHITE);
-        g.drawString(player.getHealth() +"/" + player.getMaxHealth(),30 ,25);
-        g.drawString(player.getFire()/200 +"/" +player.getMaxFire()/200, 30, 45);
+        g.drawString(player.getHealth() +"/" + player.getMaxHealth(),32 ,19);
+        g.drawString(player.getFire()/200 +"/" +player.getMaxFire()/200, 27, 44);
     }
 
 }

@@ -23,10 +23,10 @@ public class Baran extends Enemy {
         fallSpeed = 0.2;
         maxFallSpeed = 10.0;
 
-        width = 64;
-        height = 60;
-        cwidth = 35;
-        cheight = 30;
+        width = 32;
+        height = 30;
+        cwidth = 25;
+        cheight = 25;
 
         health = maxHealth = 2;
         damage = 1;
@@ -109,17 +109,17 @@ public class Baran extends Enemy {
 
     public void draw(Graphics2D g){
 
-        if(notOnScreen()) return;
+        //if(notOnScreen()) return;
 
         setMapPosition();
 
 
         if (facingRight){
-                g.drawImage(animation.getImage(), (int) (x + xmap - width / 2 + width - 10), (int) (y + ymap - (height / 2)) + 20, -width / 2, height / 2, null);
+                g.drawImage(animation.getImage(), (int) (x + xmap - width / 2 + width ), (int) (y + ymap - (height / 2) + 2) , -width , height, null);
 
         }
         else {
-                g.drawImage(animation.getImage(),(int)(x + xmap - width / 2 ) + 10, (int) (y + ymap - height / 2) + 20, width / 2, height / 2, null);
+                g.drawImage(animation.getImage(),(int)(x + xmap - width / 2 ) , (int) (y + ymap - height / 2 + 2), width , height , null);
 
 
         }
