@@ -1,6 +1,8 @@
 package GameState;
 
+import Entity.PlayerInMenu;
 import TileMap.Background;
+import TileMap.TileMap;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -11,6 +13,9 @@ import java.awt.event.KeyEvent;
 public class MenuState extends GameState {
 
     private Background bg;
+    private Background skyBg;
+    private Background treeAple;
+    private PlayerInMenu player = new PlayerInMenu(new TileMap(32));
 
     private int currentChoise = 0;
     private String[] options = {
@@ -30,8 +35,13 @@ public class MenuState extends GameState {
 
         try {
 
-            bg = new Background("/Backgrounds/menubg.gif", 1);
-            bg.setVector(-0.005,0);
+            bg = new Background("/Backgrounds/menubg2.gif", 0);
+            skyBg = new Background("/Backgrounds/sky.gif",1);
+            treeAple = new Background("/Backgrounds/Tree.gif",1);
+            bg.setVector(0,0);
+            treeAple.setVector(0,0);
+            treeAple.setPosition(-70,-17);
+            skyBg.setVector(-0.5,0);
 
             titleColor = new Color(128,0,0);
             titleFont = new Font("Century Gothic", Font.PLAIN, 28);
@@ -49,16 +59,22 @@ public class MenuState extends GameState {
 
     public void init(){}
     public void update(){
+        skyBg.update();
         bg.update();
+        treeAple.update();
+        player.update();
     }
     public void draw(Graphics2D g){
         // draw bg
+        skyBg.draw(g);
         bg.draw(g);
+        treeAple.draw(g);
+        player.draw(g);
 
         //draw title
         g.setColor(titleColor);
         g.setFont(titleFont);
-        g.drawString("Platformer",80,70);
+        g.drawString("Вилы судьбы",100,30);
 
         //draw menu options
         g.setFont(font);
@@ -69,7 +85,7 @@ public class MenuState extends GameState {
             else {
                 g.setColor(Color.BLACK);
             }
-            g.drawString(options[i], 145, 140 + i * 15);
+            g.drawString(options[i], 180, 90 + i * 15);
 
         }
 
@@ -82,7 +98,7 @@ public class MenuState extends GameState {
         }
         if (currentChoise == 1){
             //help
-
+            gsm.setState(GameStateManager.MENUSTATE);
         }
         if (currentChoise == 2){
             System.exit(0);
