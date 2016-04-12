@@ -160,6 +160,8 @@ public class Player extends MapObject {
         gliding = b;
     }
 
+    public boolean isDead(){return dead;}
+
     public void checkAttack(ArrayList<Enemy> enemies){
 
         // loop through enemies
@@ -258,6 +260,7 @@ public class Player extends MapObject {
 
             if (dy > maxFallSpeed) dy = maxFallSpeed;
         }
+        if (y > 400) dead = true;
     }
 
     public void update(){

@@ -74,6 +74,13 @@ public class Level1State extends GameState {
         }
     }
 
+    private void checkPlayerIsDead(){
+        if(player.isDead()){
+            bgMusic.stop();
+            gsm.setState(GameStateManager.GAMEOVER);
+        }
+    }
+
     public void update(){
 
         // update player
@@ -105,6 +112,7 @@ public class Level1State extends GameState {
                 i++;
             }
         }
+        checkPlayerIsDead();
     }
 
     public void draw(Graphics2D g){

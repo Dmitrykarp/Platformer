@@ -1,5 +1,6 @@
 package GameState;
 
+import Audio.AudioPlayer;
 import Entity.PlayerInGameOver;
 import Entity.PlayerInMenu;
 import TileMap.Background;
@@ -14,6 +15,7 @@ import java.awt.event.KeyEvent;
 public class GameOverState extends GameState {
 
     private Background bg;
+    private AudioPlayer bgMusic;
     private PlayerInGameOver player = new PlayerInGameOver(new TileMap(32)); //TODO upd
 
     public GameOverState(GameStateManager gsm){
@@ -26,6 +28,10 @@ public class GameOverState extends GameState {
         }catch (Exception e){
             e.printStackTrace();
         }
+
+        bgMusic = new AudioPlayer("/Music/Game_Over.mp3");
+        bgMusic.play();
+        bgMusic.setLoop();
     }
 
     public void init(){}
@@ -41,7 +47,8 @@ public class GameOverState extends GameState {
     }
 
     public void select(){
-            gsm.setState(GameStateManager.MENUSTATE);
+        bgMusic.stop();
+        gsm.setState(GameStateManager.MENUSTATE);
     }
 
     public void keyPresed(int k){
