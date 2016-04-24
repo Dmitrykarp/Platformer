@@ -25,6 +25,7 @@ public class Level1State extends GameState {
     private ArrayList<Explosion> explosions;
     private HUD hud;
     private AudioPlayer bgMusic;
+    private boolean goToBoss;
 
     public Level1State(GameStateManager gsm){
         this.gsm = gsm;
@@ -37,6 +38,7 @@ public class Level1State extends GameState {
         tileMap.loadMap("/Maps/level1-1.map");
         tileMap.setPosition(0,0);
         tileMap.setTween(0.07);
+        goToBoss = false;
 
         bg = new Background("/Backgrounds/grassbg1.gif",0.1);
 
@@ -113,6 +115,8 @@ public class Level1State extends GameState {
             }
         }
         checkPlayerIsDead();
+
+
     }
 
     public void draw(Graphics2D g){
@@ -139,6 +143,20 @@ public class Level1State extends GameState {
 
         //draw HUD
         hud.draw(g);
+
+        //Check and draw bosses door
+        if (player.getx() > 2930 && !goToBoss){
+            System.out.println("BOSS");
+            goToBoss = true;
+            tileMap.mapUpdate(5, 95, 22);
+            tileMap.mapUpdate(6, 95, 22);
+            tileMap.mapUpdate(5, 96, 22);
+            tileMap.mapUpdate(6, 96, 22);
+            tileMap.mapUpdate(5, 97, 4);
+            tileMap.mapUpdate(6, 97, 4);
+            tileMap.mapUpdate(5, 94, 3);
+            tileMap.mapUpdate(6, 94, 3);
+        }
     }
 
     public void keyPresed(int k){

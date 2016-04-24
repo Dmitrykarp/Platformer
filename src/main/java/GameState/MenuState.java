@@ -122,6 +122,9 @@ public class MenuState extends GameState {
                 currentChoise = 0;
             }
         }
+        if(k == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
     }
     public void keyReleased(int k){}
 

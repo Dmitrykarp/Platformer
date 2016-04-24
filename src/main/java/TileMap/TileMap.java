@@ -150,6 +150,10 @@ public class TileMap {
         if(y > ymax) y = ymax;
     }
 
+    public void mapUpdate(int row, int col, int value){
+        map[row][col] = value;
+    }
+
     public void draw(Graphics2D g){
 
         for(int row = rowOffset; row < rowOffset + numRowsToDraw; row++){
@@ -167,13 +171,8 @@ public class TileMap {
                 int c = rc % numTilesAcross;
 
                 g.drawImage(tiles[r][c].getImage(),(int)x + col*tileSize, (int)y + row*tileSize, null);
-
-
-
-
+                //g.drawString(row +" " + col,(int)x + col*tileSize, (int)y + row*tileSize);
             }
-
         }
     }
-
 }
