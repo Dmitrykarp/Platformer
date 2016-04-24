@@ -87,7 +87,12 @@ public class Level1State extends GameState {
 
         // update player
         player.update();
-        tileMap.setPosition(GamePanel.WIDTH / 2 - player.getx(), GamePanel.HEIGHT / 2 - player.gety());
+
+        if (!goToBoss){
+            tileMap.setPosition(GamePanel.WIDTH / 2 - player.getx(), GamePanel.HEIGHT / 2 - player.gety());
+        }else{
+            tileMap.setPosition(GamePanel.WIDTH / 2 - 3050, GamePanel.HEIGHT / 2);
+        }
 
         //set background
         bg.setPosition(tileMap.getx(), tileMap.gety());

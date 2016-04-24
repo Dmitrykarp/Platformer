@@ -35,7 +35,7 @@ public class HUD {
         g.drawString(player.getFire()/200 +"/" +player.getMaxFire()/200, 27, 44);
         //TODO Draw coordinate X and Y. Need delete after continue
         //g.drawString("X: " +player.getx(), 200, 10);
-       // g.drawString("Y: " +player.gety(), 200, 30);
+        //g.drawString("Y: " +player.gety(), 200, 30);
     }
 
 }
